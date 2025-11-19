@@ -17,7 +17,7 @@ export const getGreenScreenImage = async (
 
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash-image-preview',
+      model: 'gemini-2.5-flash-image',
       contents: {
         parts: [
           {
@@ -48,7 +48,6 @@ export const getGreenScreenImage = async (
       throw new Error("Could not find processed image in the API response.");
     }
   } catch (error) {
-    console.error("Error calling Gemini API:", error);
     if (error instanceof Error) {
         throw new Error(`Failed to remove background: ${error.message}`);
     }
